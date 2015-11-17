@@ -32,7 +32,10 @@ angular.module('anglrApp')
     mainVm.addEmployee = function () {
     	mainVm.Employees.push(mainVm.Employee);
     	mainVm.Employee = null;
-    	// console.log(mainVm.Employee);
+    }
+
+    mainVm.deleteEmployee = function (position) {
+    	mainVm.Employees.splice(position, 1);
     }
 
   });

@@ -13,7 +13,8 @@
   <button class="btn btn-primary" type="button" aria-haspopup="true" aria-expanded="true" ng-click="mainVm.addEmployee()">Add a row</button>
 <!-- filter -->
   <div ng-repeat="emp in mainVm.Employees | filter:filterName">
-    <div class="col-xs-6">{{emp.id}}</div>
+    <div class="col-xs-4 glyphicon glyphicon-remove" ng-click="mainVm.deleteEmployee($index)"></div>
+    <div class="col-xs-2">{{emp.id}}</div>
     <div class="col-xs-6">{{emp.name}}</div>
   </div>
 
