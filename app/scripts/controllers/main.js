@@ -29,8 +29,9 @@ angular.module('anglrApp')
     	"name": "TuliSumeer"
     }]
 
-    function addEmployee () {
-    	
+    mainVm.addEmployee = function () {
+    	mainVm.Employees.push(mainVm.Employee);
+    	// console.log(mainVm.Employee);
     }
 
   });
