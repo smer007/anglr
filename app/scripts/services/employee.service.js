@@ -3,7 +3,7 @@
 
 	angular.module('anglrApp').service('employeeService', employeeService);
 
-	employeeService.$inject = ['$http', '$q']
+	employeeService.$inject = ['$http', '$q'];
 
 	function employeeService($http, $q) {
 		var self = this;
@@ -20,9 +20,9 @@
 					defer.resolve(response.data);//proimse made is successfull
 				}, function (error) {
 					defer.reject(error.status);//proimse made is unsuccessfull
-				})
+				});
 
 				return defer.promise;
-		}
+		};
 	}
-})()
+})();
