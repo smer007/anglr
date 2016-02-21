@@ -3,27 +3,19 @@
 
 	angular.module('anglrApp').service('employeeService', employeeService);
 
-	function employeeService() {
+	employeeService.$inject = ['$http']
+
+	function employeeService($http) {
 		var self = this;
 
 		self.getEmployees = function () {
-			return [{
-			      "id": 1,
-			      "name": "Sumeer",
-			      "price": 4
-			    }, {
-			      "id": 2,
-			      "name": "Sam",
-			      "price": 4
-			    }, {
-			      "id": 3,
-			      "name": "Tuli",
-			      "price": 4
-			    }, {
-			      "id": 4,
-			      "name": "TuliSumeer",
-			      "price": 4
-			    }]
+			$http
+				.get('http://jsonplaceholder.typicode.com/users')
+				.then(function (response) {
+					console.dir(response.data);
+				}, function (error) {
+					console.dir(error.status);
+				})
 		}
 	}
 })()
