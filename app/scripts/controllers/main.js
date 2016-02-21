@@ -11,9 +11,9 @@ angular.module('anglrApp')
   .controller('MainCtrl', function () {
   	var mainVm = this;
     mainVm.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+      'Two way data binding',
+      'Dirty checking',
+      'Digest cycle'
     ];
     mainVm.Employees = [{
     	"id": 1,
