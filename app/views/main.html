@@ -23,14 +23,32 @@
     <th ng-click="mainVm.sort.by='name'; mainVm.sort.reverse=!mainVm.sort.reverse;">
       Employee Name
     </th>
-    <th ng-click="mainVm.sort.by='price'; mainVm.sort.reverse=!mainVm.sort.reverse;">Price</th>
+    <th ng-click="mainVm.sort.by='email'; mainVm.sort.reverse=!mainVm.sort.reverse;">
+      Emial
+    </th>
+    <th ng-click="mainVm.sort.by='address.city'; mainVm.sort.reverse=!mainVm.sort.reverse;">
+      City
+    </th>
+    <th ng-click="mainVm.sort.by='address.zipcode'; mainVm.sort.reverse=!mainVm.sort.reverse;">
+      Zip
+    </th>
+    <th ng-click="mainVm.sort.by='phone'; mainVm.sort.reverse=!mainVm.sort.reverse;">
+      Phone
+    </th>
+    <th ng-click="mainVm.sort.by='company.name'; mainVm.sort.reverse=!mainVm.sort.reverse;">
+      Company Name
+    </th>
   </thead>
   <tbody>
     <tr ng-repeat="emp in mainVm.Employees | filter:filterName | orderBy:mainVm.sort.by:mainVm.sort.reverse">
-      <td><span ng-click="mainVm.deleteEmployee($index)"></span></td>
+      <td><span class="glyphicon glyphicon-remove" ng-click="mainVm.deleteEmployee($index)"></span></td>
       <td>{{emp.id | number:0}}</td>
       <td>{{emp.name | uppercase}}</td>
-      <td>{{emp.price | currency:'USD '}}</td>
+      <td>{{emp.email}}</td>
+      <td>{{emp.address.city}}</td>
+      <td>{{emp.address.zipcode}}</td>
+      <td>{{emp.phone}}</td>
+      <td>{{emp.company.name}}</td>
     </tr>
     
   </tbody>

@@ -13,8 +13,14 @@ angular.module('anglrApp')
   MainController.$inject= ['employeeService'];
   function MainController(employeeService) {
     var mainVm = this;
+
+    employeeService.getEmployees().then(function (result) {
+      mainVm.Employees = result;
+    }, function (error) {
+      console.log(error);
+    });
     
-    mainVm.Employees = employeeService.getEmployees();
+    // mainVm.Employees = employeeService.getEmployees();
 
     mainVm.addEmployee = function () {
       mainVm.Employees.push(mainVm.Employee);
