@@ -10,23 +10,23 @@
 angular.module('anglrApp')
   .controller('MainCtrl', function () {
   	var mainVm = this;
-    mainVm.awesomeThings = [
-      'Two way data binding',
-      'Dirty checking',
-      'Digest cycle'
-    ];
+    
     mainVm.Employees = [{
     	"id": 1,
-    	"name": "Sumeer"
+    	"name": "Sumeer",
+      "price": 4
     }, {
     	"id": 2,
-    	"name": "Sam"
+    	"name": "Sam",
+      "price": 4
     }, {
     	"id": 3,
-    	"name": "Tuli"
+    	"name": "Tuli",
+      "price": 4
     }, {
     	"id": 4,
-    	"name": "TuliSumeer"
+    	"name": "TuliSumeer",
+      "price": 4
     }]
 
     mainVm.addEmployee = function () {
