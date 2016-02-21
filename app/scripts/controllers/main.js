@@ -10,26 +10,11 @@
 angular.module('anglrApp')
   .controller('MainCtrl', MainController);
 
-  function MainController() {
+  MainController.$inject= ['employeeService'];
+  function MainController(employeeService) {
     var mainVm = this;
     
-    mainVm.Employees = [{
-      "id": 1,
-      "name": "Sumeer",
-      "price": 4
-    }, {
-      "id": 2,
-      "name": "Sam",
-      "price": 4
-    }, {
-      "id": 3,
-      "name": "Tuli",
-      "price": 4
-    }, {
-      "id": 4,
-      "name": "TuliSumeer",
-      "price": 4
-    }]
+    mainVm.Employees = employeeService.getEmployees();
 
     mainVm.addEmployee = function () {
       mainVm.Employees.push(mainVm.Employee);
