@@ -1,57 +1,9 @@
 
 <div class="row marketing" ng-controller="MainCtrl as mainVm">
   
-<!-- ng-model binds -->
-  <input type="text" class="form-control" ng-model="filterName" placeholder="filterName" aria-describedby="basic-addon1">
-
-
-  <input type="text" class="form-control" ng-model="mainVm.Employee.id" placeholder="id" aria-describedby="basic-addon1">
-
-  <input type="text" class="form-control" ng-model="mainVm.Employee.name" placeholder="name" aria-describedby="basic-addon1">
-
-  <button class="btn btn-primary" type="button" aria-haspopup="true" aria-expanded="true" ng-click="mainVm.addEmployee()">Add a row</button>
-<!-- filter -->
   
-  <table class="table table-hover">
-  <thead>
-    <th>
-      
-    </th>
-    <th ng-click="mainVm.sort.by='id'; mainVm.sort.reverse=!mainVm.sort.reverse;">
-      Id
-    </th>
-    <th ng-click="mainVm.sort.by='name'; mainVm.sort.reverse=!mainVm.sort.reverse;">
-      Employee Name
-    </th>
-    <th ng-click="mainVm.sort.by='email'; mainVm.sort.reverse=!mainVm.sort.reverse;">
-      Emial
-    </th>
-    <th ng-click="mainVm.sort.by='address.city'; mainVm.sort.reverse=!mainVm.sort.reverse;">
-      City
-    </th>
-    <th ng-click="mainVm.sort.by='address.zipcode'; mainVm.sort.reverse=!mainVm.sort.reverse;">
-      Zip
-    </th>
-    <th ng-click="mainVm.sort.by='phone'; mainVm.sort.reverse=!mainVm.sort.reverse;">
-      Phone
-    </th>
-    <th ng-click="mainVm.sort.by='company.name'; mainVm.sort.reverse=!mainVm.sort.reverse;">
-      Company Name
-    </th>
-  </thead>
-  <tbody>
-    <tr ng-repeat="emp in mainVm.Employees | filter:filterName | orderBy:mainVm.sort.by:mainVm.sort.reverse">
-      <td><span class="glyphicon glyphicon-remove" ng-click="mainVm.deleteEmployee($index)"></span></td>
-      <td>{{emp.id | number:0}}</td>
-      <td>{{emp.name | uppercase}}</td>
-      <td>{{emp.email}}</td>
-      <td>{{emp.address.city}}</td>
-      <td>{{emp.address.zipcode}}</td>
-      <td>{{emp.phone | phone}}</td>
-      <td>{{emp.company.name}}</td>
-    </tr>
-    
-  </tbody>
-  </table>
+  <div ng-include="'views/templates/addEmployee.tmpl.html'"></div>
+  
+  <div ng-include="'views/templates/employeeDetails.tmpl.html'"></div>
 
 </div>
