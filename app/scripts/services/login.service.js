@@ -15,7 +15,7 @@
 			var defer = $q.defer();
 
 			$http
-				.get('http://localhost:8080/RESTApi/api/employees/tweets')
+				.get('http://localhost:8080/RESTApi/api/tweets/all')
 				.then(function (response) {
 					console.log(response.data);
 					defer.resolve(response.data);//proimse made is successfull
