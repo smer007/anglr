@@ -16,6 +16,7 @@ angular.module('anglrApp')
 
     employeeService.getEmployees().then(function (result) {
       mainVm.Employees = result;
+      // console.log(mainVm.Employees);
     }, function (error) {
       console.log(error);
     });
